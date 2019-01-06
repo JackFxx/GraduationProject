@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/car-rental.iml" filepath="$PROJECT_DIR$/car-rental.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../car-rental/car-rental-common/car-rental-common.iml" filepath="$PROJECT_DIR$/../car-rental/car-rental-common/car-rental-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../car-rental/car-rental-dao/car-rental-dao.iml" filepath="$PROJECT_DIR$/../car-rental/car-rental-dao/car-rental-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../car-rental/car-rental-domain/car-rental-domain.iml" filepath="$PROJECT_DIR$/../car-rental/car-rental-domain/car-rental-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../car-rental/car-rental-res/car-rental-res.iml" filepath="$PROJECT_DIR$/../car-rental/car-rental-res/car-rental-res.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../car-rental/car-rental-service/car-rental-service.iml" filepath="$PROJECT_DIR$/../car-rental/car-rental-service/car-rental-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../car-rental/car-rental-web/car-rental-web.iml" filepath="$PROJECT_DIR$/../car-rental/car-rental-web/car-rental-web.iml" />
+    </modules>
+  </component>
+</project>
