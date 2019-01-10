@@ -1,5 +1,7 @@
 package com.graduation.domain.base;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -9,6 +11,7 @@ import java.io.Serializable;
  * @Author fuxiaoxiang2
  * @Create 2019/1/6 19:57
  */
+@Data
 public class BaseQueryParam implements Serializable{
     /**
      * 页码

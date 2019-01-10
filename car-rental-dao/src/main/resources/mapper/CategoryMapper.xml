@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.graduation.dao.mapper.CategoryMapper">
+    <resultMap id="BaseResultMap" type="com.graduation.domain.bo.CategoryBO">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <result column="detail_des" property="detailDes" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="TINYINT"/>
+        <result column="real_price" property="realPrice" jdbcType="DECIMAL"/>
+        <result column="line_price" property="linePrice" jdbcType="DECIMAL"/>
+        <result column="source_user" property="sourceUser" jdbcType="VARCHAR"/>
+        <result column="view_num" property="viewNum" jdbcType="INTEGER"/>
+        <result column="like_num" property="likeNum" jdbcType="INTEGER"/>
+        <result column="hate_num" property="hateNum" jdbcType="INTEGER"/>
+        <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
+        <result column="img_url" property="imgUrl" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="modify_time" property="modifyTime" jdbcType="BIGINT"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, category_name, detail_des, type, real_price, line_price, source_user, view_num,
+        like_num, hate_num, main_img_url, img_url, create_time, modify_time
+    </sql>
+    <sql id="page_sql">
+        <if test="offset != null">
+            limit #{offset,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}
+        </if>
+    </sql>
+    <sql id="order_sql">
+        <if test="sortFiled != null and sortFiled != ''">
+            order by #{sortField} #{sortOrder}
+        </if>
+    </sql>
+    <sql id="select_condition">
+        <trim prefix="where" prefixOverrides="and |or">
+            <include refid="if_sql"></include>
+        </trim>
+    </sql>
+    <sql id="if_sql">
+        <if test="id != null">
+            id,
+        </if>
+        <if test="categoryName != null">
+            category_name,
+        </if>
+        <if test="detailDes != null">
+            detail_des,
+        </if>
+        <if test="type != null">
+            type,
+        </if>
+        <if test="realPrice != null">
+            real_price,
+        </if>
+        <if test="linePrice != null">
+            line_price,
+        </if>
+        <if test="sourceUser != null">
+            source_user,
+        </if>
+        <if test="viewNum != null">
+            view_num,
+        </if>
+        <if test="likeNum != null">
+            like_num,
+        </if>
+        <if test="hateNum != null">
+            hate_num,
+        </if>
+        <if test="mainImgUrl != null">
+            main_img_url,
+        </if>
+        <if test="imgUrl != null">
+            img_url,
+        </if>
+        <if test="createTime != null">
+            create_time,
+        </if>
+        <if test="modifyTime != null">
+            modify_time,
+        </if>
+    </sql>
+    <select id="query" resultMap="BaseResultMap" parameterType="com.graduation.domain.po.CategoryPO">
+        select
+        <include refid="Base_Column_List"/>
+        from car_rental_category
+        <include refid="select_condition"/>
+        <include refid="page_sql"/>
+        <include refid="order_sql"/>
+    </select>
+    <delete id="remove" parameterType="java.lang.Integer">
+        delete from car_rental_category
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.graduation.domain.bo.CategoryBO">
+        insert into car_rental_category
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != BIGINT">
+                id,
+            </if>
+            <if test="categoryName != null">
+                category_name,
+            </if>
+            <if test="detailDes != null">
+                detail_des,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="realPrice != null">
+                real_price,
+            </if>
+            <if test="linePrice != null">
+                line_price,
+            </if>
+            <if test="sourceUser != null">
+                source_user,
+            </if>
+            <if test="viewNum != null">
+                view_num,
+            </if>
+            <if test="likeNum != null">
+                like_num,
+            </if>
+            <if test="hateNum != null">
+                hate_num,
+            </if>
+            <if test="mainImgUrl != null">
+                main_img_url,
+            </if>
+            <if test="imgUrl != null">
+                img_url,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="modifyTime != null">
+                modify_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="categoryName != null">
+                #{categoryName,jdbcType=VARCHAR},
+            </if>
+            <if test="detailDes != null">
+                #{detailDes,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=TINYINT},
+            </if>
+            <if test="realPrice != null">
+                #{realPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="linePrice != null">
+                #{linePrice,jdbcType=DECIMAL},
+            </if>
+            <if test="sourceUser != null">
+                #{sourceUser,jdbcType=VARCHAR},
+            </if>
+            <if test="viewNum != null">
+                #{viewNum,jdbcType=INTEGER},
+            </if>
+            <if test="likeNum != null">
+                #{likeNum,jdbcType=INTEGER},
+            </if>
+            <if test="hateNum != null">
+                #{hateNum,jdbcType=INTEGER},
+            </if>
+            <if test="mainImgUrl != null">
+                #{mainImgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="imgUrl != null">
+                #{imgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="modifyTime != null">
+                #{modifyTime,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="com.graduation.domain.bo.CategoryBO">
+        update car_rental_category
+        <set>
+            <if test="categoryName != null">
+                category_name = #{categoryName,jdbcType=VARCHAR},
+            </if>
+            <if test="detailDes != null">
+                detail_des = #{detailDes,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=TINYINT},
+            </if>
+            <if test="realPrice != null">
+                real_price = #{realPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="linePrice != null">
+                line_price = #{linePrice,jdbcType=DECIMAL},
+            </if>
+            <if test="sourceUser != null">
+                source_user = #{sourceUser,jdbcType=VARCHAR},
+            </if>
+            <if test="viewNum != null">
+                view_num = #{viewNum,jdbcType=INTEGER},
+            </if>
+            <if test="likeNum != null">
+                like_num = #{likeNum,jdbcType=INTEGER},
+            </if>
+            <if test="hateNum != null">
+                hate_num = #{hateNum,jdbcType=INTEGER},
+            </if>
+            <if test="mainImgUrl != null">
+                main_img_url = #{mainImgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="imgUrl != null">
+                img_url = #{imgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="modifyTime != null">
+                modify_time = #{modifyTime,jdbcType=BIGINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>
