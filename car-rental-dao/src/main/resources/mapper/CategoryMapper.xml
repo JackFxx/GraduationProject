@@ -17,6 +17,22 @@
         <result column="create_time" property="createTime" jdbcType="BIGINT"/>
         <result column="modify_time" property="modifyTime" jdbcType="BIGINT"/>
     </resultMap>
+    <resultMap id="BaseResultVOMap" type="com.graduation.domain.vo.CategoryVO">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <result column="detail_des" property="detailDes" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="TINYINT"/>
+        <result column="real_price" property="realPrice" jdbcType="DECIMAL"/>
+        <result column="line_price" property="linePrice" jdbcType="DECIMAL"/>
+        <result column="source_user" property="sourceUser" jdbcType="VARCHAR"/>
+        <result column="view_num" property="viewNum" jdbcType="INTEGER"/>
+        <result column="like_num" property="likeNum" jdbcType="INTEGER"/>
+        <result column="hate_num" property="hateNum" jdbcType="INTEGER"/>
+        <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
+        <result column="img_url" property="imgUrl" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="modify_time" property="modifyTime" jdbcType="BIGINT"/>
+    </resultMap>
     <sql id="Base_Column_List">
         id, category_name, detail_des, type, real_price, line_price, source_user, view_num,
         like_num, hate_num, main_img_url, img_url, create_time, modify_time
@@ -81,6 +97,14 @@
         </if>
     </sql>
     <select id="query" resultMap="BaseResultMap" parameterType="com.graduation.domain.po.CategoryPO">
+        select
+        <include refid="Base_Column_List"/>
+        from car_rental_category
+        <include refid="select_condition"/>
+        <include refid="page_sql"/>
+        <include refid="order_sql"/>
+    </select>
+    <select id="listCategory" resultMap="BaseResultVOMap" parameterType="com.graduation.domain.po.CategoryPO">
         select
         <include refid="Base_Column_List"/>
         from car_rental_category

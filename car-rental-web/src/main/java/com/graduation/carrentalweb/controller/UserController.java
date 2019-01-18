@@ -4,15 +4,18 @@ import com.alibaba.fastjson.JSONObject;
 import com.graduation.common.enums.UserEnum;
 import com.graduation.domain.bo.UserBO;
 import com.graduation.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,16 +50,17 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public Map<String, Object> loginUser(UserBO bo, ModelMap map) {
+    public Map<String, Object> loginUser(UserBO bo, ModelMap map, HttpServletRequest request) {
         Map<String, Object> result = new HashMap<>();
         if (null == bo) {
             return null;
         }
         try {
-            int loginCode = userService.loginUser(bo.getUsername(), bo.getPassword(), bo.getMobile());
-            map.addAttribute("user", bo);
-            result.put("code", loginCode * 100);
-            result.put("msg", UserEnum.queryUserMessage(loginCode).getMessage());
+            String loginToken = userService.loginUser(bo.getUsername(), bo.getPassword(), bo.getMobile());
+            if (StringUtils.isNotBlank(loginToken)) {
+                map.addAttribute("user", bo);
+                request.getSession().setAttribute("token", loginToken);
+            }
         } catch (Exception e) {
             result.put("code", 500);
             result.put("msg", "服务端错误");
@@ -100,6 +104,15 @@ public class UserController {
             result.put("msg", "服务端错误");
             logger.error("update user:{}", JSONObject.toJSONString(bo), e);
         }
+        return result;
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public @ResponseBody
+    Map<String, Object> test(@RequestParam("ids[]") String[] ids) {
+        Map<String, Object> result = new HashMap<>();
+        logger.info("ids:{}", JSONObject.toJSONString(ids));
+        result.put("msg","ok");
         return result;
     }
 }

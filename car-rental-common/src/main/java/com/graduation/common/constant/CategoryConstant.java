@@ -10,5 +10,5 @@ package com.graduation.common.constant;
 public class CategoryConstant {
 
     //统一商品图片地址
-    public static final String IMG_HOME = "D:\\京东生活\\学习\\car-rental-pictures\\category\\";
+    public static final String CATEGORY_IMG_HOME = "D:\\京东生活\\学习\\car-rental-pictures\\category\\";
 }

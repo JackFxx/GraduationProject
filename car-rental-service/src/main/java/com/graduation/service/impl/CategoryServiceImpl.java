@@ -10,6 +10,7 @@ import org.apache.commons.lang3.tuple.MutablePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.List;
  * @Author fuxiaoxiang2
  * @Create 2019/1/9 14:45
  */
+@Service("categoryService")
 public class CategoryServiceImpl implements CategoryService {
     private static final Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
 
@@ -69,10 +71,9 @@ public class CategoryServiceImpl implements CategoryService {
             logger.warn("please input message");
             return null;
         }
-
-        return null;
+        List<CategoryVO> categoryList = categoryMapper.listCategory(categoryPO);
+        return categoryList;
     }
-
     private Long createCategoryId() {
         Long categoryId = System.currentTimeMillis();
         int num1 = (int) (Math.random() * 10);

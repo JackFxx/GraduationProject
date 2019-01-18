@@ -19,8 +19,8 @@
       <module name="car-rental-common" target="1.7" />
       <module name="car-rental-dao" target="1.7" />
       <module name="car-rental-domain" target="1.7" />
-      <module name="car-rental-res" target="1.7" />
-      <module name="car-rental-service" target="1.7" />
+      <module name="car-rental-res" target="1.8" />
+      <module name="car-rental-service" target="1.8" />
       <module name="car-rental-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>

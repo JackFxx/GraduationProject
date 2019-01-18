@@ -31,17 +31,16 @@ public class VisitLogAdvice {
      * @return
      * @throws Throwable
      */
+    @Around("@annotation(org.springframework.web.bind.annotation.RequestMapping)")
     public Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
         MDC.clear();
         MDC.put("requestId", UUID.randomUUID().toString());
         Object args[] = joinPoint.getArgs();
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
-        logger.info("调用开始-->调用类:{} 方法:{} 请求参数:{} ", method.getDeclaringClass().getName(),method.getName(),JSONObject.toJSON(args));
         long start = System.currentTimeMillis();
         Object result = joinPoint.proceed();
         long timeConsuming = System.currentTimeMillis() - start;
-        logger.info("调用结束--> 返回值:{} 耗时:{}ms", JSONObject.toJSONString(result, SerializerFeature.WriteMapNullValue), timeConsuming);
         return result;
     }
 }

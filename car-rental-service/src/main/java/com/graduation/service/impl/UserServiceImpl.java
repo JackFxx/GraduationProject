@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -68,7 +70,7 @@ public class UserServiceImpl implements UserService {
      * @Param [username, password, mobile]
      **/
     @Override
-    public int loginUser(String username, String password, Long mobile) {
+    public String loginUser(String username, String password, Long mobile) {
         if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {//使用用户名和密码登陆
             UserBO user = null;
             try {
@@ -82,15 +84,15 @@ public class UserServiceImpl implements UserService {
             }
             if (null != user) {
                 //登陆成功 信息暂存于redis
-                redisClient.loginSetUser(user);
-                return UserEnum.USER_SUCCESS.getCode();
+                String token = createToken(username);
+                redisClient.loginSetUserToken(user,token);
+                return token;
             }
-            return UserEnum.NO_THIS_USER.getCode();
         }
         if (null != mobile) {//TODO 使用手机登陆
 
         }
-        return UserEnum.NO_USER_PASSWORD.getCode();
+        return null;
     }
 
     /**
@@ -107,17 +109,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int updateUser(UserBO userBO) {
-        if(null == userBO || userBO.getId() ==null || userBO.getMobile() == null){
+        if (null == userBO || userBO.getId() == null || userBO.getMobile() == null) {
             logger.warn("please input update condition");
             return UserEnum.USER_PARAM_ERROR.getCode();
         }
         int updateCount = -5;
         try {
             updateCount = userMapper.updateUser(userBO);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("updateUser user:{},occurs:", JSONObject.toJSONString(userBO), e);
         }
         return updateCount;
+    }
+
+    @Override
+    public boolean userTest() {
+        return false;
     }
 
     /**
@@ -127,5 +134,15 @@ public class UserServiceImpl implements UserService {
      */
     private Long getTime() {
         return System.currentTimeMillis();
+    }
+
+    /**
+     * 生成token
+     *
+     * @param username
+     * @return
+     */
+    private String createToken(String username) {
+        return UUID.randomUUID().toString().replace("-", "") + username;
     }
 }

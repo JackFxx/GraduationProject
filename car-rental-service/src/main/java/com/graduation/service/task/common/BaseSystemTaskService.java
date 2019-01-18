@@ -1,5 +1,9 @@
 package com.graduation.service.task.common;
 
+import org.aspectj.lang.annotation.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -7,9 +11,10 @@ package com.graduation.service.task.common;
  * @Author fuxiaoxiang2
  * @Create 2019/1/9 22:16
  */
-public interface BaseSystemTaskService {
+public abstract class BaseSystemTaskService {
+    protected static final Logger logger = LoggerFactory.getLogger(BaseSystemTaskService.class);
     /**
      * 定时任务
      */
-    void execute();
+    protected abstract void execute();
 }

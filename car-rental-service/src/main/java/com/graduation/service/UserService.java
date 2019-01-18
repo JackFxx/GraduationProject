@@ -24,9 +24,9 @@ public interface UserService {
      * @param username
      * @param password
      * @param mobile
-     * @return
+     * @return 生成token返回
      */
-    int loginUser(String username, String password, Long mobile);
+    String loginUser(String username, String password, Long mobile);
 
     /**
      * 用户注销
@@ -40,4 +40,6 @@ public interface UserService {
      * @return
      */
     int updateUser(UserBO userBO);
+
+    boolean userTest();
 }

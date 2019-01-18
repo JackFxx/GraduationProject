@@ -25,6 +25,7 @@
         <springboot-rabbitmq-version>2.0.4.RELEASE</springboot-rabbitmq-version>
         <springboot-web-version>2.0.4.RELEASE</springboot-web-version>
         <lang3-version>3.4</lang3-version>
+        <joda-version>2.2</joda-version>
     </properties>
     <dependencies>
         <dependency>
@@ -87,6 +88,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>${lang3-version}</version>
         </dependency>
-
+        <!--时间插件-->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-version}</version>
+        </dependency>
     </dependencies>
 </project>
