@@ -32,11 +32,11 @@ public class CategoryBO implements Serializable {
     /**
      * 实时价格
      */
-    private Long realPrice;
+    private Double realPrice;
     /**
      * 划线价格
      */
-    private Long linePrice;
+    private Double linePrice;
     /**
      * 来源人
      */
@@ -62,6 +62,30 @@ public class CategoryBO implements Serializable {
      */
     private String imgUrl;
     /**
+     * 省份ID
+     */
+    private Integer provinceId;
+    /**
+     * 省份名
+     */
+    private String provinceName;
+    /**
+     * 城市ID
+     */
+    private Integer cityId;
+    /**
+     * 城市名
+     */
+    private String cityName;
+    /**
+     * 区ID
+     */
+    private Integer districtId;
+    /**
+     * 区名称
+     */
+    private String districtName;
+    /**
      * 创建时间
      */
     private Long createTime;
@@ -69,6 +93,10 @@ public class CategoryBO implements Serializable {
      * 修改时间
      */
     private Long modifyTime;
+    /**
+     * 下架时间
+     */
+    private Long obtainTime;
 
     private static final long serialVersionUID = 1L;
 }

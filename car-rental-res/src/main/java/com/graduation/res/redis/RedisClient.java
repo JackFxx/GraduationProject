@@ -9,12 +9,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -169,6 +172,70 @@ public class RedisClient {
         return bannerList;
     }
 
+    /**
+     * @return int
+     * @Author fuxiaoxiang2
+     * @Description 增加并取key的值
+     * @Date 12:43 2019/1/18
+     * @Param [key, increNum, milliseconds]
+     **/
+    public long setAndIncre(String key, int increNum, long milliseconds) {
+        if (null == key) {
+            return -1;
+        }
+        if (!redisTemplate.hasKey(key)) {
+            redisTemplate.opsForValue().set(key, increNum, milliseconds, TimeUnit.MILLISECONDS);
+            return 1;
+        }
+        return redisTemplate.opsForValue().increment(key, increNum);
+    }
+
+    /**
+     * @return boolean
+     * @Author fuxiaoxiang2
+     * @Description 基于redis的setEx操作实现的简单分布式锁
+     * @Date 16:49 2019/1/20
+     * @Param [key, lockTime]
+     **/
+    public Boolean tryLock(String key, long lockTime) {
+        if (StringUtils.isBlank(key)) {
+            return false;
+        }
+        if (lockTime <= 0) {
+            lockTime = 60000;//默认锁1分钟
+        }
+        //在指定时间过期
+        long expireAtTime = System.currentTimeMillis() + lockTime;
+        long finalLockTime = lockTime;
+        return (Boolean) redisTemplate.execute((RedisCallback) connection -> {
+            Boolean acquire = connection.setNX(key.getBytes(), String.valueOf(expireAtTime).getBytes());
+            if (acquire) {
+                return true;
+            } else {
+                byte[] value = connection.get(key.getBytes());
+                if (null != value && value.length > 0) {//其余线程可以对锁进行续约
+                    long oldExpireTime = Long.parseLong(Arrays.toString(value));
+                    connection.getSet(key.getBytes(),String.valueOf(oldExpireTime+ finalLockTime).getBytes());
+                }
+            }
+            return false;
+        });
+    }
+    /**
+     * @Author fuxiaoxiang2
+     * @Description  释放锁
+     * @Date 21:04 2019/1/20
+     * @Param [key, lockTime]
+     * @return java.lang.Boolean
+     **/
+
+    public void releaseLock(String key){
+        if(StringUtils.isBlank(key) || !redisTemplate.hasKey(key)){
+            logger.warn("please input right key");
+            return;
+        }
+        redisTemplate.delete(key);
+    }
     public static void main(String[] args) {
 
     }

@@ -1,5 +1,6 @@
 package com.graduation.service.task;
 
+import com.graduation.common.constant.RedisConstant;
 import com.graduation.domain.bo.CategoryBO;
 import com.graduation.domain.po.CategoryPO;
 import com.graduation.domain.vo.CategoryVO;
@@ -39,9 +40,19 @@ public class RankCategoryTask extends BaseSystemTaskService {
     @Scheduled(cron = "0 0 5 * * ?")
     @Override
     public void execute() {
-        logger.info("RankCategoryTask task is executing");
-        this.handler();
-        logger.info("RankCategoryTask task is over");
+        try {
+            if (!redisClient.tryLock(RedisConstant.RANK_CATEGORY_KEY, RedisConstant.RANK_CATEGORY_TIME)) {
+                logger.info("rank category lock failed");
+                return;
+            }
+            logger.info("RankCategoryTask task is executing");
+            this.handler();
+            logger.info("RankCategoryTask task is over");
+        } catch (Exception e) {
+            logger.error("rank category task error", e);
+        } finally {
+            redisClient.releaseLock(RedisConstant.RANK_CATEGORY_KEY);
+        }
     }
 
     private void handler() {
@@ -49,10 +60,10 @@ public class RankCategoryTask extends BaseSystemTaskService {
         String yesterday = new DateTime().minusHours(6).toString("dd");
         String today = new DateTime().minusHours(0).toString("dd");
         int count = 1;
-        int pageNo = 1;
-        int pageSize = 100;
+        int pageNo = 1;//当前页码
+        int pageSize = 100;//每次取数据大小
         List<CategoryVO> categoryList = new ArrayList<>();
-        while (count >0){
+        while (count > 0) {
             po.setPageNo(pageNo);
             po.setPageSize(pageSize);
             List<CategoryVO> categoryVOList = categoryService.listCategory(po);
@@ -61,15 +72,16 @@ public class RankCategoryTask extends BaseSystemTaskService {
             }
             count = categoryVOList.size();
             pageNo++;
-            categoryVOList.forEach(vo->{
-                if(null == vo){
+            categoryVOList.forEach(vo -> {
+                if (null == vo) {
                     return;
                 }
-                redisClient.updateCategoryRank(vo,getScore(vo.getViewNum(),vo.getLikeNum(),vo.getHateNum()),yesterday,today,1);
+                redisClient.updateCategoryRank(vo, getScore(vo.getViewNum(), vo.getLikeNum(), vo.getHateNum()), yesterday, today, 1);
             });
         }
-        redisClient.updateCategoryRank(null,null,yesterday,today,0);
+        redisClient.updateCategoryRank(null, null, yesterday, today, 0);
     }
+
     /**
      * 类目热度分值计算公式
      *

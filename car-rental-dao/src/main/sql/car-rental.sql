@@ -30,8 +30,18 @@ create table `car_rental_category`(
 `view_num` INTEGER DEFAULT 0 comment '浏览数',
 `like_num` INTEGER DEFAULT 0 comment '点赞数',
 `hate_num` INTEGER DEFAULT 0 comment '点踩数',
-`main_img_url` VARCHAR(51) NOt NULL  comment '主图地址',
-`img_url` VARCHAR(255) not null  comment '次图片地址',
+`main_img_url` VARCHAR(500) NOt NULL  comment '主图地址',
+`img_url` VARCHAR(500) not null  comment '次图片地址',
+`province_id` tinyint(1) comment '省份ID',
+`province_name` VARCHAR(20) comment '省份名称',
+`city_id` tinyint(1) comment '城市ID',
+`city_name` VARCHAR(20) comment '城市名称',
+`district_id` tinyint(1) comment '区ID',
+`district_name` VARCHAR(20) comment '区名称',
 `create_time` BIGINT comment '创建时间',
-`modify_time` BIGINT comment '更新时间'
+`modify_time` BIGINT comment '更新时间',
+`obtain__time` BIGINT comment '下架时间',
+ key idx_category_name(category_name),
+ key idx_type(type),
+ key idx_creat_time(create_time)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='汽车租赁系统商品类目';

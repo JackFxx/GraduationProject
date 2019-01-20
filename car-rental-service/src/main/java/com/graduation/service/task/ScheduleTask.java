@@ -19,15 +19,15 @@ public class ScheduleTask {
     /**
      * 每隔60s执行一次
      */
-    @Scheduled(cron = "0/60 * * * * ?")
+//    @Scheduled(cron = "0/60 * * * * ?")
     public void executeTask() {
         logger.info("this is my task1");
     }
 
     /**
-     * 每隔5秒执行一次
+     * 每隔1小时秒执行一次
      */
-   @Scheduled(cron = "0 0 */1 * * ?")
+//   @Scheduled(cron = "0 0 */1 * * ?")
     public void executeTask2() throws InterruptedException {
         Thread.sleep(10000);
         logger.info("this is my task2");

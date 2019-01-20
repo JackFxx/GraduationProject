@@ -1,8 +1,7 @@
 package com.graduation.carrentalweb.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.graduation.common.enums.ApiEnum;
-import com.graduation.domain.base.CommonResponse;
+import com.graduation.domain.dto.CommonResponse;
 import com.graduation.domain.po.CategoryPO;
 import com.graduation.domain.vo.CategoryVO;
 import com.graduation.service.CategoryService;
@@ -16,8 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -59,7 +56,7 @@ public class CommonController {
     }
 
     /**
-     * @return com.graduation.domain.base.CommonResponse
+     * @return com.graduation.domain.dto.CommonResponse
      * @Author fuxiaoxiang2
      * @Description 拉取首页banner图
      * @Date 18:31 2019/1/17
@@ -73,7 +70,7 @@ public class CommonController {
     }
 
     /**
-     * @return com.graduation.domain.base.CommonResponse
+     * @return com.graduation.domain.dto.CommonResponse
      * @Author fuxiaoxiang2
      * @Description 存储banner图
      * @Date 18:31 2019/1/18

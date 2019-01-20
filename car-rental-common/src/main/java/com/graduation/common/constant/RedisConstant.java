@@ -37,4 +37,14 @@ public class RedisConstant {
      * 排行榜展示数量
      */
     public static final int RANK_NUM = 10;
+
+    /**
+     * 部分分布式锁key值
+     */
+    public static final String RANK_CATEGORY_KEY = "car:rental:rank:category";
+
+    /**
+     * 部分常用过期时间
+     */
+    public static final long RANK_CATEGORY_TIME = 60 * 1000;
 }

@@ -1,5 +1,6 @@
 package com.graduation.carrentalweb.controller;
 
+import com.graduation.carrentalweb.config.annotation.LimitAccess;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexController {
     private static final String REDIRECT_TO_BOOK_URL = "index";
 
+    @LimitAccess(count = 5,time = 60000)
     @RequestMapping(method = RequestMethod.GET)
     public String carRentalIndexView(ModelMap map){
         map.addAttribute("index",null);

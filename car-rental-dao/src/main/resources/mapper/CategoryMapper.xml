@@ -14,8 +14,15 @@
         <result column="hate_num" property="hateNum" jdbcType="INTEGER"/>
         <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
         <result column="img_url" property="imgUrl" jdbcType="VARCHAR"/>
+        <result column="province_id" property="provinceId" jdbcType="BIT" />
+        <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
+        <result column="city_id" property="cityId" jdbcType="BIT" />
+        <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+        <result column="district_id" property="districtId" jdbcType="BIT" />
+        <result column="district_name" property="districtName" jdbcType="VARCHAR" />
         <result column="create_time" property="createTime" jdbcType="BIGINT"/>
         <result column="modify_time" property="modifyTime" jdbcType="BIGINT"/>
+        <result column="obtain_time" property="obtainTime" jdbcType="BIGINT"/>
     </resultMap>
     <resultMap id="BaseResultVOMap" type="com.graduation.domain.vo.CategoryVO">
         <id column="id" property="id" jdbcType="BIGINT"/>
@@ -30,12 +37,20 @@
         <result column="hate_num" property="hateNum" jdbcType="INTEGER"/>
         <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
         <result column="img_url" property="imgUrl" jdbcType="VARCHAR"/>
+        <result column="province_id" property="provinceId" jdbcType="BIT" />
+        <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
+        <result column="city_id" property="cityId" jdbcType="BIT" />
+        <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+        <result column="district_id" property="districtId" jdbcType="BIT" />
+        <result column="district_name" property="districtName" jdbcType="VARCHAR" />
         <result column="create_time" property="createTime" jdbcType="BIGINT"/>
         <result column="modify_time" property="modifyTime" jdbcType="BIGINT"/>
+        <result column="obtain_time" property="obtainTime" jdbcType="BIGINT"/>
     </resultMap>
     <sql id="Base_Column_List">
         id, category_name, detail_des, type, real_price, line_price, source_user, view_num,
-        like_num, hate_num, main_img_url, img_url, create_time, modify_time
+        province_id, province_name, city_id,
+        city_name, district_id, district_name,like_num, hate_num, main_img_url, img_url, create_time, modify_time,obtain_time
     </sql>
     <sql id="page_sql">
         <if test="offset != null">
@@ -89,11 +104,32 @@
         <if test="imgUrl != null">
             img_url,
         </if>
+        <if test="provinceId != null">
+            province_id,
+        </if>
+        <if test="provinceName != null">
+            province_name,
+        </if>
+        <if test="cityId != null">
+            city_id,
+        </if>
+        <if test="cityName != null">
+            city_name,
+        </if>
+        <if test="districtId != null">
+            district_id,
+        </if>
+        <if test="districtName != null">
+            district_name,
+        </if>
         <if test="createTime != null">
             create_time,
         </if>
         <if test="modifyTime != null">
             modify_time,
+        </if>
+        <if test="obtainTime != null">
+            obtain_time,
         </if>
     </sql>
     <select id="query" resultMap="BaseResultMap" parameterType="com.graduation.domain.po.CategoryPO">
@@ -119,7 +155,7 @@
     <insert id="insert" parameterType="com.graduation.domain.bo.CategoryBO">
         insert into car_rental_category
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != BIGINT">
+            <if test="id != null">
                 id,
             </if>
             <if test="categoryName != null">
@@ -155,11 +191,32 @@
             <if test="imgUrl != null">
                 img_url,
             </if>
+            <if test="provinceId != null">
+                province_id,
+            </if>
+            <if test="provinceName != null">
+                province_name,
+            </if>
+            <if test="cityId != null">
+                city_id,
+            </if>
+            <if test="cityName != null">
+                city_name,
+            </if>
+            <if test="districtId != null">
+                district_id,
+            </if>
+            <if test="districtName != null">
+                district_name,
+            </if>
             <if test="createTime != null">
                 create_time,
             </if>
             <if test="modifyTime != null">
                 modify_time,
+            </if>
+            <if test="obtainTime != null">
+                obtain_time,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -199,11 +256,32 @@
             <if test="imgUrl != null">
                 #{imgUrl,jdbcType=VARCHAR},
             </if>
+            <if test="provinceId != null">
+                #{provinceId,jdbcType=INTEGER},
+            </if>
+            <if test="provinceId != null">
+                #{provinceName,jdbcType=VARCHAR},
+            </if>
+            <if test="cityId != null">
+                #{cityId,jdbcType=INTEGER},
+            </if>
+            <if test="cityName != null">
+                #{cityName,jdbcType=VARCHAR},
+            </if>
+            <if test="districtId != null">
+                #{districtId,jdbcType=INTEGER},
+            </if>
+            <if test="districtName != null">
+                #{districtName,jdbcType=VARCHAR},
+            </if>
             <if test="createTime != null">
                 #{createTime,jdbcType=BIGINT},
             </if>
             <if test="modifyTime != null">
                 #{modifyTime,jdbcType=BIGINT},
+            </if>
+            <if test="obtainTime != null">
+                #{obtainTime,jdbcType=BIGINT},
             </if>
         </trim>
     </insert>
@@ -243,11 +321,32 @@
             <if test="imgUrl != null">
                 img_url = #{imgUrl,jdbcType=VARCHAR},
             </if>
+            <if test="provinceId != null">
+                #{provinceId,jdbcType=INTEGER},
+            </if>
+            <if test="provinceId != null">
+                #{provinceName,jdbcType=VARCHAR},
+            </if>
+            <if test="cityId != null">
+                #{cityId,jdbcType=INTEGER},
+            </if>
+            <if test="cityName != null">
+                #{cityName,jdbcType=VARCHAR},
+            </if>
+            <if test="districtId != null">
+                #{districtId,jdbcType=INTEGER},
+            </if>
+            <if test="districtName != null">
+                #{districtName,jdbcType=VARCHAR},
+            </if>
             <if test="createTime != null">
                 create_time = #{createTime,jdbcType=BIGINT},
             </if>
             <if test="modifyTime != null">
                 modify_time = #{modifyTime,jdbcType=BIGINT},
+            </if>
+            <if test="obtainTime != null">
+                obtain_time = #{obtainTime,jdbcType=BIGINT},
             </if>
         </set>
         where id = #{id,jdbcType=BIGINT}

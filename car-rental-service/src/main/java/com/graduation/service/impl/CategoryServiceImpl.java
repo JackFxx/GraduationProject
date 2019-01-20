@@ -1,5 +1,6 @@
 package com.graduation.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.graduation.common.util.PictureUtil;
 import com.graduation.dao.mapper.CategoryMapper;
 import com.graduation.domain.bo.CategoryBO;
@@ -49,6 +50,9 @@ public class CategoryServiceImpl implements CategoryService {
         bo.setId(categoryId);
         bo.setMainImgUrl(imgAddress.getLeft());
         bo.setImgUrl(imgAddress.getRight());
+        bo.setCreateTime(System.currentTimeMillis());
+        bo.setModifyTime(System.currentTimeMillis());
+        logger.info(JSONObject.toJSONString(imgAddress));
         int count = -1;
         try {
             count = categoryMapper.insert(bo);

@@ -42,7 +42,7 @@ public class PictureUtil {
             if (!filePath.exists()) {
                 try {
                     if (i == 0) {
-                        imgAddress.setLeft(filePath.getName());
+                        imgAddress.setLeft(filePath.getAbsolutePath());
                     } else {
                         sb.append(filePath.getAbsolutePath());
                         if (i == files.length - 1) {

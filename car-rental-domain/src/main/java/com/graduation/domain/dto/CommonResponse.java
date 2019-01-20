@@ -1,11 +1,11 @@
-package com.graduation.domain.base;
+package com.graduation.domain.dto;
 import com.graduation.common.enums.ApiEnum;
 import java.io.Serializable;
 
 /**
  * Created with IntelliJ IDEA.
  *
- * @Descrtiption 标准出参实体
+ * @Descrtiption 标准出参实体 DTO
  * @Author fuxiaoxiang2
  * @Create 2019/1/17 16:28
  */

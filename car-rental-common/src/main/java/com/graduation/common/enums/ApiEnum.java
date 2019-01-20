@@ -10,6 +10,7 @@ package com.graduation.common.enums;
 public enum  ApiEnum {
     SUCCESS(200,"成功"),
     NO_SOURCE(401,"请求资源不存在"),
+    OPERATION_FAILED(407,"失败"),
     NO_LOGIN(407,"未登录"),
     SERVER_ERROR(501,"服务端错误");
     private Integer code;

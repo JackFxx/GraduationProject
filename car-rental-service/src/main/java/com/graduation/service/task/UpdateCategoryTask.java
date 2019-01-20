@@ -24,7 +24,7 @@ public class UpdateCategoryTask extends BaseSystemTaskService {
     /**
      * 定时任务 每60秒执行一次
      */
-    @Scheduled(cron = "0 0 5 * * ?")
+//    @Scheduled(cron = "0 0 5 * * ?")
     @Override
     public void execute() {
 

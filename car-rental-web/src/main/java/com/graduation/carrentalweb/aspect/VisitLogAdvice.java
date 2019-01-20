@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb.aop;
+package com.graduation.carrentalweb.aspect;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -16,17 +16,19 @@ import java.lang.reflect.Method;
 import java.util.UUID;
 
 /**
- * @description controller层日志统一接口
  * @author fuxiaoxiang2
+ * @description controller层日志统一接口
  * @create 2018/01/07
  */
 @Component
 @Aspect
 @Order(99)
 public class VisitLogAdvice {
-    private static final Logger logger = LoggerFactory.getLogger(VisitLogAdvice.class);
+    private static final Logger LOG = LoggerFactory.getLogger(VisitLogAdvice.class);
+
     /**
      * 为RequestMapping添加日志拦截
+     *
      * @param joinPoint
      * @return
      * @throws Throwable
@@ -34,13 +36,17 @@ public class VisitLogAdvice {
     @Around("@annotation(org.springframework.web.bind.annotation.RequestMapping)")
     public Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
         MDC.clear();
-        MDC.put("requestId", UUID.randomUUID().toString());
+        MDC.put("requestId", UUID.randomUUID().toString());//记录当前请求的线程ID，方便于日志追踪
         Object args[] = joinPoint.getArgs();
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
+        LOG.info("调用开始-->调用类:{} 方法:{} 请求参数:{} ", method.getDeclaringClass().getName(), method.getName(), JSONObject.toJSONString(args));
+        LOG.info("begin mdc:{}", MDC.get("requestId"));
         long start = System.currentTimeMillis();
         Object result = joinPoint.proceed();
         long timeConsuming = System.currentTimeMillis() - start;
+        LOG.info("调用结束--> 返回值:{} 耗时:{}ms", JSONObject.toJSONString(result, SerializerFeature.WriteMapNullValue), timeConsuming);
+        LOG.info("end mdc:{}", MDC.get("requestId"));
         return result;
     }
 }
