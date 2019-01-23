@@ -1,5 +1,6 @@
-package com.graduation.carrentalweb.controller;
+package com.graduation.web.controller;
 
+import com.graduation.web.config.annotation.LimitAccess;
 import com.graduation.common.enums.ApiEnum;
 import com.graduation.domain.dto.CommonResponse;
 import com.graduation.domain.po.CategoryPO;
@@ -42,6 +43,7 @@ public class CommonController {
      * @Date 16:22 2019/1/17
      * @Param [response, request]
      **/
+    @LimitAccess(count = 5,time = 10000)
     @RequestMapping("/home/category")
     public @ResponseBody
     CommonResponse buildHomePage() {

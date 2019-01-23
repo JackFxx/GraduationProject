@@ -1,6 +1,6 @@
-package com.graduation.carrentalweb.aspect;
+package com.graduation.web.aspect;
 
-import com.graduation.carrentalweb.config.annotation.LimitAccess;
+import com.graduation.web.config.annotation.LimitAccess;
 import com.graduation.res.redis.RedisClient;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -37,7 +37,7 @@ public class LimitAccessAspect {
      * @Date 12:41 2019/1/18
      * @Param [joinPoint]
      **/
-    @Around("execution(* com.graduation.carrentalweb.controller ..*(..) )")
+    @Around("execution(* com.graduation.web.controller ..*(..) )")
     public Object limit(ProceedingJoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();

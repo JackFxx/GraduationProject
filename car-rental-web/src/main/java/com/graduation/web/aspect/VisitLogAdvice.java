@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb.aspect;
+package com.graduation.web.aspect;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -40,7 +40,7 @@ public class VisitLogAdvice {
         Object args[] = joinPoint.getArgs();
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
-        LOG.info("调用开始-->调用类:{} 方法:{} 请求参数:{} ", method.getDeclaringClass().getName(), method.getName(), JSONObject.toJSONString(args));
+        LOG.info("调用开始-->调用类:{} 方法:{}", method.getDeclaringClass().getName(), method.getName());
         LOG.info("begin mdc:{}", MDC.get("requestId"));
         long start = System.currentTimeMillis();
         Object result = joinPoint.proceed();

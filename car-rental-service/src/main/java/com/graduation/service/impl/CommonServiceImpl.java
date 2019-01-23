@@ -4,6 +4,7 @@ import com.graduation.common.util.PictureUtil;
 import com.graduation.res.redis.RedisClient;
 import com.graduation.service.CommonService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;

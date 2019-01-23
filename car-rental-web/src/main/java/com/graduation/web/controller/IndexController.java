@@ -1,12 +1,9 @@
-package com.graduation.carrentalweb.controller;
+package com.graduation.web.controller;
 
-import com.graduation.carrentalweb.config.annotation.LimitAccess;
+import com.graduation.web.config.annotation.LimitAccess;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,7 +18,7 @@ public class IndexController {
     private static final String REDIRECT_TO_BOOK_URL = "index";
 
     @LimitAccess(count = 5,time = 60000)
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping
     public String carRentalIndexView(ModelMap map){
         map.addAttribute("index",null);
         map.addAttribute("user",null);

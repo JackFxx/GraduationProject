@@ -1,6 +1,6 @@
-package com.graduation.carrentalweb.config;
+package com.graduation.web.config;
 
-import com.graduation.carrentalweb.interceptor.VerifyAuthorityInterceptor;
+import com.graduation.web.interceptor.VerifyAuthorityInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.*;
 @Configuration
 @EnableWebMvc
 @EnableScheduling
-@ComponentScan("com.graduation.carrentalweb")
+@ComponentScan("com.graduation.web")
 public class BaseInterceprtorConfig implements WebMvcConfigurer{
     @Bean
     public VerifyAuthorityInterceptor demoInterceptor() {

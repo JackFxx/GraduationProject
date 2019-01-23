@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb.controller;
+package com.graduation.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.graduation.common.enums.ApiEnum;

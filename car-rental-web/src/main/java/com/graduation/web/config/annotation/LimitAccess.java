@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb.config.annotation;
+package com.graduation.web.config.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb.config;
+package com.graduation.web.config;
 
 import com.graduation.common.util.FastJsonSerializer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

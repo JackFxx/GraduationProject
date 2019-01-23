@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb;
+package com.graduation.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

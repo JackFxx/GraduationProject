@@ -40,7 +40,7 @@ create table `car_rental_category`(
 `district_name` VARCHAR(20) comment '区名称',
 `create_time` BIGINT comment '创建时间',
 `modify_time` BIGINT comment '更新时间',
-`obtain__time` BIGINT comment '下架时间',
+`obtain_time` BIGINT comment '下架时间',
  key idx_category_name(category_name),
  key idx_type(type),
  key idx_creat_time(create_time)

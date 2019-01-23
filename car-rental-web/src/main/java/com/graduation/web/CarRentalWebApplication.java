@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb;
+package com.graduation.web;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

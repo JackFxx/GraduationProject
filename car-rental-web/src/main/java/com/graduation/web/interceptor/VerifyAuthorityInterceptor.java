@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb.interceptor;
+package com.graduation.web.interceptor;
 
 import com.graduation.service.UserService;
 import org.apache.commons.lang3.StringUtils;

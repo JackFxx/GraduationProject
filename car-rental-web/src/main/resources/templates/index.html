@@ -101,34 +101,41 @@
             <label for="categoryName">商品名称:</label>
             <input id="categoryName" class="form-control">
         </div>
-        <div class="row"  style="margin-top: 50px;margin-left: 20px">
+        <div class="row" style="margin-top: 50px;margin-left: 20px">
             <label for="detailDes">商品描述:</label>
             <input id="detailDes" class="form-control">
         </div>
-        <div class="row"  style="margin-top: 50px;margin-left: 47px">
+        <div class="row" style="margin-top: 50px;margin-left: 47px">
             <label for="type">类别:</label>
-            <input id="type" class="form-control">
+            <select id="type" class="form-control">
+                <option value="0">摩托车</option>
+                <option value="1">小轿车</option>
+                <option value="2">面包车</option>
+                <option value="3">跑车</option>
+                <option value="4">小货车</option>
+                <option value="5">大货车</option>
+            </select>
         </div>
-        <div class="row"  style="margin-top: 50px;margin-left: 20px">
+        <div class="row" style="margin-top: 50px;margin-left: 20px">
             <label for="realPrice">实时价格:</label>
             <input id="realPrice" class="form-control">
         </div>
-        <div class=" row"  style="margin-top: 50px;margin-left: 20px">
+        <div class=" row" style="margin-top: 50px;margin-left: 20px">
             <label for="linePrice">划线价格:</label>
             <input id="linePrice" class="form-control">
         </div>
-        <div class="row"  style="margin-top: 50px;margin-left: 34px">
+        <div class="row" style="margin-top: 50px;margin-left: 34px">
             <label for="sourceUser">所属人:</label>
             <input id="sourceUser" class="form-control">
         </div>
-       <form id="urlForm">
-           <div id="saveWrapper">
-               <div class="row"  style="margin-top: 50px;margin-left: 45px">
-                   <label for="mainUrl">主图:</label>
-                   <input id="mainUrl" multiple="multiple" name="secondUrl[]" class="form-control" type="file">
-               </div>
-           </div>
-       </form>
+        <form id="urlForm">
+            <div id="saveWrapper">
+                <div class="row" style="margin-top: 50px;margin-left: 45px">
+                    <label for="mainUrl">主图:</label>
+                    <input id="mainUrl" multiple="multiple" name="secondUrl[]" class="form-control" type="file">
+                </div>
+            </div>
+        </form>
         <div class="form-group row" style="margin-top: 1px;margin-left: -200px">
             <label class="col-sm-5 control-label"></label>
             <a href="#" id="addInput" class="col-sm-0.5 btn btn-primary">
@@ -150,7 +157,7 @@
         var AddButton = $("#addInput");
         var InputsWrapper = $("#saveWrapper");
         var x = InputsWrapper.length;//initlal text box count; //to keep track of text box added
-        var FieldCount =0;
+        var FieldCount = 0;
         $(AddButton).click(function (e)  //on add input button click
         {
             if (x < MaxInputs) //max input box allowed
@@ -175,13 +182,14 @@
             return false;
         })
     });
+
     //添加类目
     function saveCategory() {
 //        var files = $("#mainUrl").get(0).files[0];
         var data = new FormData();
         var urls = document.getElementsByName('secondUrl[]');//获取到复选框的名称
-        for(var i = 0;i<urls.length;++i){
-            data.append('files',$(urls[i]).get(0).files[0]);
+        for (var i = 0; i < urls.length; ++i) {
+            data.append('files', $(urls[i]).get(0).files[0]);
         }
         var categoryName = $("#categoryName").val();
         var detailDes = $("#detailDes").val();
@@ -189,26 +197,27 @@
         var realPrice = $("#realPrice").val();
         var linePrice = $("#linePrice").val();
         var sourceUser = $("#sourceUser").val();
-        data.append("categoryName",categoryName);
-        data.append("detailDes",detailDes);
-        data.append("type",type);
-        data.append("realPrice",realPrice);
-        data.append("linePrice",linePrice);
-        data.append("sourceUser",sourceUser);
+        data.append("categoryName", categoryName);
+        data.append("detailDes", detailDes);
+        data.append("type", type);
+        data.append("realPrice", realPrice);
+        data.append("linePrice", linePrice);
+        data.append("sourceUser", sourceUser);
         $.ajax({
-            url : '/category/save',
-            type : 'POST',
-            dataType : 'json', // 接受数据格式
-            data : data,
-            async : false,
-            cache : false,
-            contentType : false,
-            processData : false,
-            success : function (result) {
+            url: '/category/save',
+            type: 'POST',
+            dataType: 'json', // 接受数据格式
+            data: data,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (result) {
                 alert(result.msg);
             }
         });
     }
+
     function uploadBanner() {
         var bannerPath = $("#bannerPath").get(0).files[0];//上传的文件file
         var data = new FormData();
@@ -224,14 +233,16 @@
                 if (data.code == 200) {
                     console.log(data.msg);
                 } else {
-                        alert(data.msg);
+                    alert(data.msg);
                 }
             }
         })
     }
+
     $('#registryModel').on('hide.bs.modal', function () {
         alert('模态框关闭了');
     });
+
     function batchSend() {
         var ids = new Array();
         $("#sendMessageTable").find('input[name="checkname"]:checked').each(function () {
@@ -244,10 +255,10 @@
         console.log(ids);
         $.ajax({
             url: "/user/test",
-            async:false,
-            dataType:"json",
-            data:{
-              'ids':ids
+            async: false,
+            dataType: "json",
+            data: {
+                'ids': ids
             },
             success: function (result) {
                 if (result.code == 200) {
@@ -259,6 +270,7 @@
             }
         });
     }
+
     function login() {
         console.log("yes");
         $("#loginModel").modal('show');
@@ -346,7 +358,9 @@
         width: 100%;
     }
 
-    .modal-header .close {margin-right: 15px;}
+    .modal-header .close {
+        margin-right: 15px;
+    }
 
     .modal-footer {
         position: absolute;

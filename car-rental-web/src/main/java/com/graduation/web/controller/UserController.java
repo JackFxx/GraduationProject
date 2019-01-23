@@ -1,4 +1,4 @@
-package com.graduation.carrentalweb.controller;
+package com.graduation.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.graduation.common.enums.UserEnum;
@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

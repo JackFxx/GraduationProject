@@ -5,27 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f65c1be7-1d11-4ac9-bd38-0ddec0d64fe7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/LimitAccessAspect.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/annotation/LimitAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CategoryController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/CarRentalWebApplication.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/LimitAccessAspect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/VisitLogAdvice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/BaseInterceprtorConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/RedisConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/annotation/LimitAccess.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CategoryController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CommonController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/IndexController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/UserController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/interceptor/VerifyAuthorityInterceptor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/car-rental-web/src/test/java/com/graduation/carrentalweb/CarRentalWebApplicationTests.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/constant/RedisConstant.java" afterPath="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/constant/RedisConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/enums/ApiEnum.java" afterPath="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/enums/ApiEnum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/util/PictureUtil.java" afterPath="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/util/PictureUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-dao/src/main/resources/mapper/CategoryMapper.xml" afterPath="$PROJECT_DIR$/car-rental-dao/src/main/resources/mapper/CategoryMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-dao/src/main/sql/car-rental.sql" afterPath="$PROJECT_DIR$/car-rental-dao/src/main/sql/car-rental.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/bo/CategoryBO.java" afterPath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/bo/CategoryBO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/vo/CategoryVO.java" afterPath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/vo/CategoryVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/po/CategoryPO.java" afterPath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/po/CategoryPO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/redis/RedisClient.java" afterPath="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/redis/RedisClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CategoryServiceImpl.java" afterPath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CategoryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/RankCategoryTask.java" afterPath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/RankCategoryTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/ScheduleTask.java" afterPath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/ScheduleTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/UpdateCategoryTask.java" afterPath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/UpdateCategoryTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CommonController.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CommonController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/IndexController.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/IndexController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CommonServiceImpl.java" afterPath="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CommonServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-web/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/car-rental-web/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-web/src/main/resources/logback/logback-config.xml" afterPath="$PROJECT_DIR$/car-rental-web/src/main/resources/logback/logback-config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car-rental-web/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/car-rental-web/src/main/resources/templates/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/base/CommonResponse.java" afterPath="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/dto/CommonResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aop/VisitLogAdvice.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/VisitLogAdvice.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/CarRentalWebApplication.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/CarRentalWebApplication.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/LimitAccessAspect.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/aspect/LimitAccessAspect.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/VisitLogAdvice.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/aspect/VisitLogAdvice.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/BaseInterceprtorConfig.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/config/BaseInterceprtorConfig.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/RedisConfig.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/config/RedisConfig.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/annotation/LimitAccess.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/config/annotation/LimitAccess.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CategoryController.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/CategoryController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CommonController.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/CommonController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/IndexController.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/IndexController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/UserController.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/UserController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/interceptor/VerifyAuthorityInterceptor.java" afterPath="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/interceptor/VerifyAuthorityInterceptor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/car-rental-web/src/test/java/com/graduation/carrentalweb/CarRentalWebApplicationTests.java" afterPath="$PROJECT_DIR$/car-rental-web/src/test/java/com/graduation/web/CarRentalWebApplicationTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/car-rental-web/target/" />
     <ignored path="$PROJECT_DIR$/car-rental-dao/target/" />
@@ -70,6 +81,8 @@
       <find>CategoryBO</find>
       <find>insert</find>
       <find>BIGINT</find>
+      <find>ip</find>
+      <find>CategoryPO</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,8 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/mq/base/RabbitMqPusher.java" />
-        <option value="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/mq/base/RabbitMqProvider.java" />
         <option value="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/constant/RabbitConstant.java" />
         <option value="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/mq/config/RabbitConfig.java" />
         <option value="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/mq/RabbitMqConsumer.java" />
@@ -118,12 +129,7 @@
         <option value="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/CommonService.java" />
         <option value="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/constant/CategoryConstant.java" />
         <option value="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/constant/CommonConstant.java" />
-        <option value="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CommonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/car-rental-web/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CommonController.java" />
         <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/annotation/LimitAccess.java" />
-        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/LimitAccessAspect.java" />
         <option value="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/dto/BaseQueryParam.java" />
         <option value="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/base/BaseQueryParam.java" />
         <option value="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/dto/CommonResponse.java" />
@@ -131,18 +137,25 @@
         <option value="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/enums/ApiEnum.java" />
         <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CategoryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/car-rental-web/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/UpdateCategoryTask.java" />
         <option value="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/ScheduleTask.java" />
         <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aop/VisitLogAdvice.java" />
-        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/VisitLogAdvice.java" />
-        <option value="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/redis/RedisClient.java" />
         <option value="$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/constant/RedisConstant.java" />
         <option value="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/task/RankCategoryTask.java" />
-        <option value="$PROJECT_DIR$/car-rental-dao/src/main/sql/car-rental.sql" />
         <option value="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/bo/CategoryBO.java" />
         <option value="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/vo/CategoryVO.java" />
         <option value="$PROJECT_DIR$/car-rental-dao/src/main/resources/mapper/CategoryMapper.xml" />
+        <option value="$PROJECT_DIR$/car-rental-web/src/main/resources/logback/logback-config.xml" />
+        <option value="$PROJECT_DIR$/car-rental-web/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CommonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/redis/RedisClient.java" />
+        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CommonController.java" />
+        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/VisitLogAdvice.java" />
+        <option value="$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/po/CategoryPO.java" />
+        <option value="$PROJECT_DIR$/car-rental-dao/src/main/sql/car-rental.sql" />
+        <option value="$PROJECT_DIR$/car-rental-web/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/LimitAccessAspect.java" />
       </list>
     </option>
   </component>
@@ -299,9 +312,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,28 +345,46 @@
               <item name="car-rental-dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
-              <item name="car-rental-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
-              <item name="car-rental-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="sql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
               <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="car-rental-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="car-rental-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="car-rental-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="car-rental-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="car-rental-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
               <item name="car-rental-web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -385,7 +415,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrentalweb" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
@@ -394,7 +424,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrentalweb" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="aspect" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -404,20 +434,38 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrentalweb" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="car-rental-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="car-rental-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/开源项目/springboot/springboot-learning-example" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
@@ -432,8 +480,16 @@
     <property name="settings.editor.splitter.proportion" value="0.20179136" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\京东生活\学习\car-rental\car-rental-web\src\main\resources\web\static" />
+      <recent name="D:\京东生活\学习\car-rental\car-rental-dao\src\main" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.graduation.common.util" />
+      <recent name="com.graduation.res.redis" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\京东生活\学习\car-rental\car-rental-res\src\main\java\com\graduation\res\mq" />
@@ -441,14 +497,6 @@
       <recent name="D:\京东生活\学习\car-rental\car-rental-web\src\main\resources\web" />
       <recent name="D:\京东生活\学习\car-rental\car-rental-web\src\main\resources\web\static\admin\js" />
       <recent name="D:\京东生活\学习\car-rental\car-rental-web\src\main\resources\web\static\admin\css" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.graduation.common.util" />
-      <recent name="com.graduation.res.redis" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\京东生活\学习\car-rental\car-rental-web\src\main\resources\web\static" />
-      <recent name="D:\京东生活\学习\car-rental\car-rental-dao\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -466,7 +514,7 @@
   <component name="RunManager" selected="Spring Boot.CarRentalWebApplication">
     <configuration name="CarRentalWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.graduation.carrentalweb.CarRentalWebApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.graduation.web.CarRentalWebApplication" />
       <module name="car-rental-web" />
       <envs />
     </configuration>
@@ -613,7 +661,10 @@
       <workItem from="1547540979976" duration="3739000" />
       <workItem from="1547549806931" duration="3659000" />
       <workItem from="1547711085587" duration="31027000" />
-      <workItem from="1547972308205" duration="9819000" />
+      <workItem from="1547972308205" duration="10395000" />
+      <workItem from="1548033445084" duration="947000" />
+      <workItem from="1548062365440" duration="1766000" />
+      <workItem from="1548152437069" duration="6319000" />
     </task>
     <task id="LOCAL-00001" summary="用户注册登陆">
       <created>1547002760677</created>
@@ -636,11 +687,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547780711720</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="类目表新增区域信息字段，类目热度定时任务增加分布式锁">
+      <created>1547994175359</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547994175359</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153180000" />
+    <option name="totallyTimeSpent" value="162788000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -664,12 +722,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27238405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6475716" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66998756" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.043149944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36731392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973032" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -739,54 +797,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="用户注册登陆" />
     <MESSAGE value="首页基本接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="首页基本接口" />
+    <MESSAGE value="类目表新增区域信息字段，类目热度定时任务增加分布式锁" />
+    <option name="LAST_COMMIT_MESSAGE" value="类目表新增区域信息字段，类目热度定时任务增加分布式锁" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3515">
-          <caret line="95" column="21" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="95" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/util/FastJsonSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/resources/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/algorithm/RankAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1220">
-          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
@@ -801,7 +821,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/interceptor/VerifyAuthorityInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/interceptor/VerifyAuthorityInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1236">
           <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
@@ -809,43 +829,39 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/car-rental-common/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-762">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/car-rental-res/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="40" column="21" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="40" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-domain/pom.xml">
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-domain/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_181/src.zip!/java/io/Serializable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
           <caret line="168" column="17" lean-forward="false" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,32 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="18" column="93" lean-forward="false" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CommonServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="51" column="55" lean-forward="false" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/config/annotation/LimitAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -921,13 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -949,11 +932,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1362">
           <caret line="60" column="45" lean-forward="false" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
@@ -967,27 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="193" column="31" lean-forward="false" selection-start-line="193" selection-start-column="31" selection-end-line="193" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#4;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#6;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#7;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#8;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1547802761535" expanded="true" signature="7584:7618" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/car-rental-dao/src/main/java/com/graduation/dao/base/BaseCrudMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -995,27 +956,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CategoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="48" column="63" lean-forward="false" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/util/PictureUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1295">
           <caret line="44" column="39" lean-forward="false" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CommonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1369">
-          <caret line="52" column="53" lean-forward="false" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="777">
           <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,25 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="777">
           <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/CarRentalWebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/VisitLogAdvice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1057,7 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,31 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/redis/RedisClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="236" column="32" lean-forward="false" selection-start-line="236" selection-start-column="32" selection-end-line="236" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/aspect/LimitAccessAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="37" column="25" lean-forward="true" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/carrentalweb/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="41" column="13" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="41" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,15 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-355">
           <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-dao/src/main/sql/car-rental.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,15 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="64" column="7" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="64" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/bo/CategoryBO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="98" column="28" lean-forward="false" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,24 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="100" column="17" lean-forward="true" selection-start-line="83" selection-start-column="11" selection-end-line="100" selection-end-column="17" />
-          <folding>
-            <marker date="1546852193271" expanded="true" signature="4444:6063" ph="update car_r... " />
-            <marker date="1546852193271" expanded="true" signature="6175:6372" ph="SELECT from car_rental_user" />
-            <marker date="1546852193271" expanded="true" signature="6495:6631" ph="SELECT from car_rental_user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car-rental-dao/src/main/resources/mapper/CategoryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12839">
-          <caret line="347" column="32" lean-forward="false" selection-start-line="347" selection-start-column="32" selection-end-line="347" selection-end-column="32" />
-          <folding>
-            <marker date="1547993870310" expanded="true" signature="6114:6197" ph="select from car_rental_category" />
-            <marker date="1547993870310" expanded="true" signature="6448:6531" ph="select from car_rental_category" />
-            <marker date="1547993870310" expanded="true" signature="6730:6802" ph="delete from " />
-            <marker date="1547993870310" expanded="true" signature="11238:13641" ph="update car_r... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1162,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1170,6 +1030,169 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
           <caret line="48" column="59" lean-forward="false" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/org/slf4j/MDC.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="22" column="57" lean-forward="false" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/resources/logback/logback-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="13" column="55" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CommonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding>
+            <marker date="1548062619557" expanded="true" signature="853:867" ph="@{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-res/src/main/java/com/graduation/res/redis/RedisClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="200" column="8" lean-forward="false" selection-start-line="200" selection-start-column="8" selection-end-line="200" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/config/annotation/LimitAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/aspect/VisitLogAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/controller/CommonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/bo/CategoryBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="98" column="28" lean-forward="true" selection-start-line="63" selection-start-column="3" selection-end-line="98" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-domain/src/main/java/com/graduation/domain/po/CategoryPO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="99" column="28" lean-forward="false" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-service/src/main/java/com/graduation/service/impl/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="77" column="56" lean-forward="true" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-dao/src/main/resources/mapper/CategoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-dao/src/main/sql/car-rental.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-common/src/main/java/com/graduation/common/enums/CategoryEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="115" column="32" lean-forward="false" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
+          <folding>
+            <marker date="1548157055507" expanded="true" signature="7891:7925" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.13/tomcat-embed-core-9.0.13.jar!/org/apache/catalina/startup/Tomcat.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3626">
+          <caret line="123" column="18" lean-forward="true" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/CarRentalWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car-rental-web/src/main/java/com/graduation/web/aspect/LimitAccessAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="89" column="25" lean-forward="true" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
           <folding />
         </state>
       </provider>
