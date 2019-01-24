@@ -40,13 +40,15 @@ public class VisitLogAdvice {
         Object args[] = joinPoint.getArgs();
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
-        LOG.info("调用开始-->调用类:{} 方法:{}", method.getDeclaringClass().getName(), method.getName());
-        LOG.info("begin mdc:{}", MDC.get("requestId"));
+        try {//处理图片参数的异常信息
+            LOG.info("调用开始-->调用类:{} 方法:{}", method.getDeclaringClass().getName(), method.getName(),JSONObject.toJSONString(args));
+        }catch (Exception e){
+
+        }
         long start = System.currentTimeMillis();
         Object result = joinPoint.proceed();
         long timeConsuming = System.currentTimeMillis() - start;
         LOG.info("调用结束--> 返回值:{} 耗时:{}ms", JSONObject.toJSONString(result, SerializerFeature.WriteMapNullValue), timeConsuming);
-        LOG.info("end mdc:{}", MDC.get("requestId"));
         return result;
     }
 }
