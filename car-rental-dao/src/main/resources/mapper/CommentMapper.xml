@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.graduation.dao.mapper.CommentMapper">
+    <resultMap id="BaseResultMap" type="com.graduation.domain.vo.CommentVO" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="category_id" property="categoryId" jdbcType="BIGINT" />
+        <result column="comment_user" property="commentUser" jdbcType="VARCHAR" />
+        <result column="comment_content" property="commentContent" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="BIGINT" />
+        <result column="modify_time" property="modifyTime" jdbcType="BIGINT" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,category_id,comment_user,comment_content,create_time,modify_time
+    </sql>
+    <sql id="select_condition">
+        <trim prefix="where" prefixOverrides="and" suffixOverrides=",">
+            <include refid="if_sql"></include>
+        </trim>
+    </sql>
+    <sql id="if_sql">
+        <if test="id != null">
+            id,
+        </if>
+        <if test="categoryId != null">
+            category_id,
+        </if>
+        <if test="commentUser != null">
+            comment_user,
+        </if>
+        <if test="commentContent != null">
+            comment_content,
+        </if>
+        <if test="createTime != null">
+            create_time,
+        </if>
+        <if test="modifyTime != null">
+            modify_time,
+        </if>
+    </sql>
+    <insert id="insert">
+        insert INTO
+        car_rental_comment(category_id,comment_user,comment_content,create_time,modify_time)
+        VALUE
+        (#{categoryId,jdbcType=BIGINT},#{commentUser,jdbcType=VARCHAR},#{commentContent,jdbcType=VARCHAR},
+        #{createTime,jdbcType=BIGINT}, #{modifyTime,jdbcType=BIGINT})
+    </insert>
+    <select id="listComment" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from car_rental_comment
+        where
+        category_id=#{categoryId,jdbcType=VARCHAR}
+    </select>
+</mapper>

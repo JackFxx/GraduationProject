@@ -17,16 +17,25 @@ import java.util.List;
 public interface CategoryService {
     /**
      * 录入类目信息
+     *
      * @param bo
      * @param file 多张图片，第一张为主图，必选
      * @return
      */
-    int saveCategory(CategoryBO bo,MultipartFile[] file);
+    int saveCategory(CategoryBO bo, MultipartFile[] file);
 
     /**
      * 查询类目信息
+     *
      * @param categoryPO
      * @return
      */
     List<CategoryVO> listCategory(CategoryPO categoryPO);
+
+    /**
+     * 详情页服务
+     * @param categoryPO
+     * @return
+     */
+    CategoryVO queryCategoryDetail(CategoryPO categoryPO);
 }

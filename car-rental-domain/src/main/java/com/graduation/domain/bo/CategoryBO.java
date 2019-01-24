@@ -18,6 +18,10 @@ public class CategoryBO implements Serializable {
      */
     private Long id;
     /**
+     * 类目ID
+     */
+    private Long categoryId;
+    /**
      * 名称
      */
     private String categoryName;

@@ -3,6 +3,7 @@
 <mapper namespace="com.graduation.dao.mapper.CategoryMapper">
     <resultMap id="BaseResultMap" type="com.graduation.domain.bo.CategoryBO">
         <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="category_id" property="categoryId" jdbcType="BIGINT"/>
         <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
         <result column="detail_des" property="detailDes" jdbcType="VARCHAR"/>
         <result column="type" property="type" jdbcType="TINYINT"/>
@@ -14,18 +15,19 @@
         <result column="hate_num" property="hateNum" jdbcType="INTEGER"/>
         <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
         <result column="img_url" property="imgUrl" jdbcType="VARCHAR"/>
-        <result column="province_id" property="provinceId" jdbcType="BIT" />
-        <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
-        <result column="city_id" property="cityId" jdbcType="BIT" />
-        <result column="city_name" property="cityName" jdbcType="VARCHAR" />
-        <result column="district_id" property="districtId" jdbcType="BIT" />
-        <result column="district_name" property="districtName" jdbcType="VARCHAR" />
+        <result column="province_id" property="provinceId" jdbcType="BIT"/>
+        <result column="province_name" property="provinceName" jdbcType="VARCHAR"/>
+        <result column="city_id" property="cityId" jdbcType="BIT"/>
+        <result column="city_name" property="cityName" jdbcType="VARCHAR"/>
+        <result column="district_id" property="districtId" jdbcType="BIT"/>
+        <result column="district_name" property="districtName" jdbcType="VARCHAR"/>
         <result column="create_time" property="createTime" jdbcType="BIGINT"/>
         <result column="modify_time" property="modifyTime" jdbcType="BIGINT"/>
         <result column="obtain_time" property="obtainTime" jdbcType="BIGINT"/>
     </resultMap>
     <resultMap id="BaseResultVOMap" type="com.graduation.domain.vo.CategoryVO">
         <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="category_id" property="categoryId" jdbcType="BIGINT"/>
         <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
         <result column="detail_des" property="detailDes" jdbcType="VARCHAR"/>
         <result column="type" property="type" jdbcType="TINYINT"/>
@@ -37,18 +39,18 @@
         <result column="hate_num" property="hateNum" jdbcType="INTEGER"/>
         <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
         <result column="img_url" property="imgUrl" jdbcType="VARCHAR"/>
-        <result column="province_id" property="provinceId" jdbcType="BIT" />
-        <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
-        <result column="city_id" property="cityId" jdbcType="BIT" />
-        <result column="city_name" property="cityName" jdbcType="VARCHAR" />
-        <result column="district_id" property="districtId" jdbcType="BIT" />
-        <result column="district_name" property="districtName" jdbcType="VARCHAR" />
+        <result column="province_id" property="provinceId" jdbcType="BIT"/>
+        <result column="province_name" property="provinceName" jdbcType="VARCHAR"/>
+        <result column="city_id" property="cityId" jdbcType="BIT"/>
+        <result column="city_name" property="cityName" jdbcType="VARCHAR"/>
+        <result column="district_id" property="districtId" jdbcType="BIT"/>
+        <result column="district_name" property="districtName" jdbcType="VARCHAR"/>
         <result column="create_time" property="createTime" jdbcType="BIGINT"/>
         <result column="modify_time" property="modifyTime" jdbcType="BIGINT"/>
         <result column="obtain_time" property="obtainTime" jdbcType="BIGINT"/>
     </resultMap>
     <sql id="Base_Column_List">
-        id, category_name, detail_des, type, real_price, line_price, source_user, view_num,
+        id,category_id, category_name, detail_des, type, real_price, line_price, source_user, view_num,
         province_id, province_name, city_id,
         city_name, district_id, district_name,like_num, hate_num, main_img_url, img_url, create_time, modify_time,obtain_time
     </sql>
@@ -70,6 +72,9 @@
     <sql id="if_sql">
         <if test="id != null">
             id,
+        </if>
+        <if test="categoryId != null">
+            category_id,
         </if>
         <if test="categoryName != null">
             category_name,
@@ -148,15 +153,25 @@
         <include refid="page_sql"/>
         <include refid="order_sql"/>
     </select>
+    <select id="queryDetail" resultMap="BaseResultVOMap">
+        select
+        <include refid="Base_Column_List"/>
+        from car_rental_category
+        where
+        category_id=#{categoryId,jdbcType=BIGINT}
+    </select>
     <delete id="remove" parameterType="java.lang.Integer">
         delete from car_rental_category
-        where id = #{id,jdbcType=BIGINT}
+        where category_id = #{category_id,jdbcType=BIGINT}
     </delete>
     <insert id="insert" parameterType="com.graduation.domain.bo.CategoryBO">
         insert into car_rental_category
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,
+            </if>
+            <if test="categoryId != null">
+                category_id,
             </if>
             <if test="categoryName != null">
                 category_name,
@@ -222,6 +237,9 @@
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 #{id,jdbcType=BIGINT},
+            </if>
+            <if test="categoryId != null">
+                #{categoryId,jdbcType=BIGINT},
             </if>
             <if test="categoryName != null">
                 #{categoryName,jdbcType=VARCHAR},
@@ -349,6 +367,6 @@
                 obtain_time = #{obtainTime,jdbcType=BIGINT},
             </if>
         </set>
-        where id = #{id,jdbcType=BIGINT}
+        where category_id = #{categoryId,jdbcType=BIGINT}
     </update>
 </mapper>

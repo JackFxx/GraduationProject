@@ -20,7 +20,8 @@ key idx_user_pwd(username,password) comment '常用字段创建索引'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='汽车租赁系统用户表';
 
 create table `car_rental_category`(
-`id` BIGINT PRIMARY key  comment '唯一ID',
+`id` BIGINT PRIMARY key auto_increment comment '唯一ID',
+`category_id` BIGINT  comment '类目ID',
 `category_name` VARCHAR(20) NOT NULL comment '名称',
 `detail_des` VARCHAR(30) comment '描述',
 `type` tinyint(2) NOT NULL  comment '类别',
@@ -41,7 +42,18 @@ create table `car_rental_category`(
 `create_time` BIGINT comment '创建时间',
 `modify_time` BIGINT comment '更新时间',
 `obtain_time` BIGINT comment '下架时间',
+ key idx_category_id(category_id),
  key idx_category_name(category_name),
  key idx_type(type),
  key idx_creat_time(create_time)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='汽车租赁系统商品类目';
+
+create table `car_rental_comment`(
+`id`  BIGINT PRIMARY key auto_increment comment '唯一ID',
+`category_id` BIGINT not null comment '类目ID',
+`comment_user` VARCHAR(1000) comment '评论人',
+`comment_content` VARCHAR(10000) comment '评论内容',
+`create_time` BIGINT comment '第一次评论时间',
+`modify_time` BIGINT comment '评论更新时间',
+key idx_category(category_id) comment '类目ID索引'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='类目评论表';

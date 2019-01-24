@@ -75,4 +75,22 @@ public class CategoryController {
             return CommonResponse.failed(ApiEnum.SERVER_ERROR);
         }
     }
+    /**
+     * @return com.graduation.domain.dto.CommonResponse
+     * @Author fuxiaoxiang2
+     * @Description 查看类目详情
+     * @Date 19:33 2019/1/23
+     * @Param [categoryPO]
+     **/
+    @RequestMapping(value = "/detail")
+    public @ResponseBody
+    CommonResponse queryCategoryDetail(CategoryPO categoryPO) {
+        try {
+            CategoryVO vo = categoryService.queryCategoryDetail(categoryPO);
+            return CommonResponse.success(vo);
+        } catch (Exception e) {
+            LOG.error("saveCategory:{},error", JSONObject.toJSONString(categoryPO), e);
+            return CommonResponse.failed(ApiEnum.SERVER_ERROR);
+        }
+    }
 }

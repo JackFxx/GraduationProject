@@ -3,6 +3,7 @@ package com.graduation.domain.vo;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,6 +18,10 @@ public class CategoryVO implements Serializable {
      * 唯一ID
      */
     private Long id;
+    /**
+     * 类目ID
+     */
+    private Long categoryId;
     /**
      * 名称
      */
@@ -97,4 +102,9 @@ public class CategoryVO implements Serializable {
      * 下架时间
      */
     private Long obtainTime;
+
+    /**
+     * 评论列表
+     */
+    List<CommentVO> voList;
 }
