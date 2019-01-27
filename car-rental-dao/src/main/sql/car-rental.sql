@@ -57,3 +57,23 @@ create table `car_rental_comment`(
 `modify_time` BIGINT comment '评论更新时间',
 key idx_category(category_id) comment '类目ID索引'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='类目评论表';
+create table `car_rental_order`(
+`id`  BIGINT PRIMARY key auto_increment comment '唯一ID',
+`order_id` BIGINT not null comment '订单ID',
+`category_id` BIGINT not null comment '类目ID',
+`user_id` BIGINT not null comment '购买者ID',
+`user_name` VARCHAR(20) comment '用户姓名',
+`mobile` BIGINT comment '用户电话号码',
+`num` INTEGER not null comment '商品数量',
+`total_price` DECIMAL not null comment '总价格',
+`order_status` TINYINT(1) DEFAULT 0 comment '订单状态 0待支付 1已支付 2主动取消 3自动取消',
+`receive_addr` VARCHAR(30) comment '详细收货地址',
+`create_time` BIGINT not null comment '下单时间',
+`modify_time` BIGINT DEFAULT null comment '更新时间',
+`pay_time` BIGINT  DEFAULT null comment '支付时间',
+`cancel_time` BIGINT  DEFAULT null comment '取消时间',
+key idx_order_id(order_id),
+key idx_category_id(category_id),
+key idx_user_id(user_id),
+key idx_order_status(order_status)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单信息表';
