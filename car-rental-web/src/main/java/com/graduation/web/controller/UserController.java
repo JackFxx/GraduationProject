@@ -50,6 +50,7 @@ public class UserController {
     public Map<String, Object> loginUser(UserBO bo, ModelMap map, HttpServletRequest request) {
         Map<String, Object> result = new HashMap<>();
         if (null == bo) {
+            logger.error("user is null");
             return null;
         }
         try {
@@ -57,6 +58,8 @@ public class UserController {
             if (StringUtils.isNotBlank(loginToken)) {
                 map.addAttribute("user", bo);
                 request.getSession().setAttribute("token", loginToken);
+                result.put("code", 200);
+                result.put("msg", "登陆成功");
             }
         } catch (Exception e) {
             result.put("code", 500);

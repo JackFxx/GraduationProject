@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  *
- * @Descrtiption
+ * @Descrtiption 订单服务 主要与MQ相关的service
  * @Author fuxiaoxiang2
  * @Create 2019/1/27 20:49
  */
@@ -32,9 +32,4 @@ public interface OrderService {
      * 取消
      */
     int cancelOrder(OrderBO orderBO);
-
-    /**
-     * 查看
-     */
-    List<OrderBO> queryOrder(OrderPO orderPO);
 }

@@ -30,6 +30,12 @@ public class CommonResponse implements Serializable {
         response.setData(object);
         return response;
     }
+    public static CommonResponse failed(String message){
+        CommonResponse response = new CommonResponse();
+        response.setCode(700);
+        response.setMsg(message);
+        return response;
+    }
     public static CommonResponse failed(ApiEnum apiEnum){
         CommonResponse response = new CommonResponse();
         response.setCode(apiEnum.getCode());

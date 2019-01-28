@@ -1,13 +1,20 @@
 package com.graduation.web.aspect;
 
+import com.graduation.common.constant.RedisConstant;
+import com.graduation.common.context.LoginContext;
+import com.graduation.domain.bo.OrderBO;
+import com.graduation.domain.bo.UserBO;
+import com.graduation.web.config.CheckLogin;
 import com.graduation.web.config.annotation.LimitAccess;
 import com.graduation.res.redis.RedisClient;
+import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -25,8 +32,9 @@ import java.lang.reflect.Method;
  */
 @Aspect
 @Component
-public class LimitAccessAspect {
-    private static final Logger LOG = LoggerFactory.getLogger(LimitAccessAspect.class);
+@Order(2)
+public class BaseAspect {
+    private static final Logger LOG = LoggerFactory.getLogger(BaseAspect.class);
     @Resource(name = "redisClient")
     private RedisClient redisClient;
 
@@ -38,24 +46,48 @@ public class LimitAccessAspect {
      * @Param [joinPoint]
      **/
     @Around("execution(* com.graduation.web.controller ..*(..) )")
-    public Object limit(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object doAspect(ProceedingJoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
+        Object[] args = joinPoint.getArgs();
         Class<?> targetClass = method.getDeclaringClass();
-        LimitAccess rateLimit = method.getAnnotation(LimitAccess.class);//获取标注有LimitAccess注解的方法
-        if (null != rateLimit) {//需要限流
-            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-            String ip = getIpAddress(request);
-            String key = ip + "-" + targetClass.getSimpleName() + "-" + method.getName();
-            long accessTimes = redisClient.setAndIncre(key, 1, rateLimit.time());
-            if (accessTimes < rateLimit.count()) {
-                LOG.info("这是 ip:{},第:{}次访问,类:{},方法:{}", ip, accessTimes, targetClass.getSimpleName(), method.getName());
-                return joinPoint.proceed();
-            }
-        } else {//不需要限流
-            return joinPoint.proceed();
+        //1.判断是否有登陆注解标识
+        CheckLogin checkLogin = method.getAnnotation(CheckLogin.class);
+        if (null != checkLogin && !checkLogin(targetClass, method, checkLogin, args)) {//需要登陆
+            throw new Exception("请先登陆");
         }
-        throw new Exception("休息一下吧!");
+        //2.判断是否有限流注解标识
+        LimitAccess rateLimit = method.getAnnotation(LimitAccess.class);
+        if (null != rateLimit && !checkLimit(targetClass, method, rateLimit, args)) {//需要限流
+            throw new Exception("休息一下");
+        }
+        return joinPoint.proceed();
+    }
+
+    private boolean checkLogin(Class clazz, Method method, CheckLogin checkLogin, Object[] args) {
+        //1.参数转换
+        if (null == args || args.length < 1) {
+            LOG.warn("empty args");
+            return false;
+        }
+        UserBO userBO = (UserBO) redisClient.get(RedisConstant.USER_KEY_PRE + ((OrderBO) args[0]).getUserId());
+        if (null != userBO && StringUtils.isNotBlank(userBO.getUsername())) {
+            LoginContext.set("user", userBO);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean checkLimit(Class targetClass, Method method, LimitAccess limitAccess, Object[] args) {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        String ip = getIpAddress(request);
+        String key = ip + "-" + targetClass.getSimpleName() + "-" + method.getName();
+        long accessTimes = redisClient.setAndIncre(key, 1, limitAccess.time());
+        if (accessTimes < limitAccess.count()) {
+            LOG.info("这是 ip:{},第:{}次访问,类:{},方法:{}", ip, accessTimes, targetClass.getSimpleName(), method.getName());
+            return true;
+        }
+        return false;
     }
 
     /**

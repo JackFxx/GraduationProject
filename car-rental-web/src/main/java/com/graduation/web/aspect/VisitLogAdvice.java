@@ -1,5 +1,6 @@
 package com.graduation.web.aspect;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -41,9 +42,9 @@ public class VisitLogAdvice {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         try {//处理图片参数的异常信息
-            LOG.info("调用开始-->调用类:{} 方法:{}", method.getDeclaringClass().getName(), method.getName(),JSONObject.toJSONString(args));
+            LOG.info("调用开始-->调用类:{} 方法:{}", method.getDeclaringClass().getName(), method.getName(), JSON.toJSONString(args,SerializerFeature.IgnoreErrorGetter));
         }catch (Exception e){
-
+            LOG.error("error",e);
         }
         long start = System.currentTimeMillis();
         Object result = joinPoint.proceed();

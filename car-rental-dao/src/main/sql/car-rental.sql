@@ -57,6 +57,7 @@ create table `car_rental_comment`(
 `modify_time` BIGINT comment '评论更新时间',
 key idx_category(category_id) comment '类目ID索引'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='类目评论表';
+
 create table `car_rental_order`(
 `id`  BIGINT PRIMARY key auto_increment comment '唯一ID',
 `order_id` BIGINT not null comment '订单ID',

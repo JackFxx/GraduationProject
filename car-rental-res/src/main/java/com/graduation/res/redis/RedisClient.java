@@ -241,4 +241,12 @@ public class RedisClient {
     public static void main(String[] args) {
 
     }
+
+    public Object get(String key){
+        if(StringUtils.isBlank(key) || !redisTemplate.hasKey(key)){
+            logger.warn("please input right key");
+            return null;
+        }
+        return redisTemplate.opsForValue().get(key);
+    }
 }

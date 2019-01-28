@@ -1,7 +1,8 @@
-package com.graduation.res.mq;
+package com.graduation.service.mq;
 
 import com.graduation.common.constant.RabbitConstant;
-import com.graduation.res.mq.base.RabbitMqConsumer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -15,10 +16,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RabbitListener(queues = RabbitConstant.PAY_ORDER_QUEUE)
-public class OrderPayQueue extends RabbitMqConsumer{
+public class OrderPayQueue{
+    private static final Logger logger = LoggerFactory.getLogger(OrderSubmitQueue.class);
 
     @RabbitHandler
-    @Override
     protected void consumer(Object message) {
         logger.info("OrderPayQueue consumer message:{}",message);
 

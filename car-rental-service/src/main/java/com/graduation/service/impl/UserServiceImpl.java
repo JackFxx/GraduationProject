@@ -1,6 +1,7 @@
 package com.graduation.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.graduation.common.context.LoginContext;
 import com.graduation.common.enums.UserEnum;
 import com.graduation.dao.mapper.UserMapper;
 import com.graduation.domain.bo.UserBO;
@@ -85,7 +86,7 @@ public class UserServiceImpl implements UserService {
             if (null != user) {
                 //登陆成功 信息暂存于redis
                 String token = createToken(username);
-                redisClient.loginSetUserToken(user,token);
+                redisClient.loginSetUserToken(user, token);
                 return token;
             }
         }
