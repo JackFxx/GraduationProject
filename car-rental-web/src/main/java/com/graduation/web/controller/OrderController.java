@@ -49,4 +49,36 @@ public class OrderController {
         }
         return CommonResponse.success();
     }
+    @RequestMapping(value = "/pay")
+    @CheckLogin
+    @LimitAccess(time = 5000, count = 2)
+    public @ResponseBody
+    CommonResponse payOrder(OrderBO orderBO) {
+        try {
+            int count = orderService.payOrder(orderBO);
+            if (count != 1) {
+                return CommonResponse.failed("支付失败");
+            }
+        } catch (Exception e) {
+            LOG.error("payOrder:{},error", JSONObject.toJSONString(orderBO));
+            return CommonResponse.failed(ApiEnum.SERVER_ERROR);
+        }
+        return CommonResponse.success();
+    }
+    @RequestMapping(value = "/cancel")
+    @CheckLogin
+    @LimitAccess(time = 5000, count = 2)
+    public @ResponseBody
+    CommonResponse cancelOrder(OrderBO orderBO) {
+        try {
+            int count = orderService.cancelOrder(orderBO);
+            if (count != 1) {
+                return CommonResponse.failed("取消失败");
+            }
+        } catch (Exception e) {
+            LOG.error("cancelOrder:{},error", JSONObject.toJSONString(orderBO));
+            return CommonResponse.failed(ApiEnum.SERVER_ERROR);
+        }
+        return CommonResponse.success();
+    }
 }

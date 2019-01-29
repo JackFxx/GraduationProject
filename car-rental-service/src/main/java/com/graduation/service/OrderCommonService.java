@@ -19,6 +19,20 @@ public interface OrderCommonService {
     int insertOrder(OrderBO orderBO);
 
     /**
+     * 支付
+     * @param orderBO
+     * @return
+     */
+    int payOrder(OrderBO orderBO);
+
+    /**
+     * 取消
+     * @param orderBO
+     * @return
+     */
+    int cancelOrder(OrderBO orderBO);
+
+    /**
      * 查看
      */
     List<OrderBO> queryOrder(OrderPO orderPO);

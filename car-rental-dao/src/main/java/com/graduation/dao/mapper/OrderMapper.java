@@ -30,6 +30,13 @@ public interface OrderMapper extends BaseCrudMapper<OrderBO>, BaseQueryMapper<Or
     int cancelOrder(OrderBO orderBO);
 
     /**
+     * 记录支付时间
+     * @param orderBO
+     * @return
+     */
+    int recordPayTime(OrderBO orderBO);
+
+    /**
      * 取消订单
      * @param orderPO
      * @return

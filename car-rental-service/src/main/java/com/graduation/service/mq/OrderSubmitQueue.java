@@ -22,18 +22,14 @@ import javax.annotation.Resource;
  */
 @Component
 @RabbitListener(queues = RabbitConstant.SUBMIT_ORDER_QUEUE)
-public class OrderSubmitQueue {
-    private static final Logger logger = LoggerFactory.getLogger(OrderSubmitQueue.class);
-
-    @Resource(name = "orderCommonService")
-    private OrderCommonService orderCommonService;
+public class OrderSubmitQueue extends AbstractConsumerMQ {
 
     @RabbitHandler
+    @Override
     protected void consumer(Object message) {
-        logger.info("receive submit order:{}", JSONObject.toJSONString(message));
-        Message body = (Message) message;
-        byte[] content = body.getBody();
-        OrderBO orderBO = JSONObject.parseObject(content,OrderBO.class);
+        logger.info("submit queue receive message:{}",JSONObject.toJSONString(message));
+        //提取数据
+        OrderBO orderBO = parseOrder(message);
         try {
             int count = orderCommonService.insertOrder(orderBO);
             if (count != 1) {
